@@ -1,0 +1,100 @@
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="author" content ="Teryn">
+        <meta name='keyword' content="HTML, CSS, Javascript">
+        <link rel="stylesheet" href="stylesheet.css">
+    </head>
+    <body>
+        <header>
+            <h1 id="title">D GOODS</h1>
+            
+        </header>
+        <main>
+            <h2>Restaurants</h2>
+            <section id="Restaurant-list container"> </section>
+            <form>
+                <input 
+                type="text"
+                id="rating"
+                placeholder="rate the restaurant"/>
+                    <section id="ratings container">
+                        <label for="zero">
+                            <input
+                                type="radio"
+                                name="ratings"
+                                value="0"
+                                id="zero"/>
+                            0
+                        </label>
+                        <label for="one">
+                            <input
+                                type="radio"
+                                name="ratings"
+                                value="1"
+                                id="one"/>
+                            1
+                        </label>
+                        <label for="two">
+                            <input
+                                type="radio"
+                                name="ratings"
+                                value="2"
+                                id="two"/>
+                            2
+                        </label>
+                        <label for="three">
+                            <input
+                                type="radio"
+                                name="ratings"
+                                value="3"
+                                id="three"/>
+                            3
+                        </label>
+                        <label for="four">
+                            <input
+                                type="radio"
+                                name="ratings"
+                                value="4"
+                                id="four"/>
+                            4
+                        </label>
+                        <label for="five">
+                            <input
+                                type="radio"
+                                name="ratings"
+                                value="5"
+                                id="five"/>
+                            5
+                        </label>
+                    </section>
+    
+                <input 
+                type="text"
+                id="restaurantName"
+                placeholder="Restaurant Name"
+                />
+                <input 
+                type="text"
+                id="foodType"
+                placeholder="Type of food"
+                />
+                <input 
+                type="text"
+                id="location"
+                placeholder="Address"
+                />
+                <input 
+                type="text"
+                id="website"
+                placeholder="website url"
+                />
+                <button>Submit Restaurant</button>
+            </form>
+        </main>
+
+        <script src="restaurants.js"></script>
+    </body>
+</html>
