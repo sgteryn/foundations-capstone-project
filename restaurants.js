@@ -1,39 +1,9 @@
-require("dotenv").config()
-const {CONNECTION_STRING} = process.env
+// const restaurantsContainer = document.querySelector("#restaurant-list-container")
 
-const Sequelize = require('sequelize')
-const sequelize = new Sequelize(CONNECTION_STRING, {
-    dialect: 'postgres',
-    dialectOptions: {
-        ssl: {
-            rejectUnauthorized: false
-        }
-    }
-  })
-
-module.exports = {
-    seed: (req,res) => {
-        sequelize.query(`
-        CREATE TABLE restaurants (
-            restaurant_id serial primary key,
-            rating integer,
-            restaurant_name varchar,
-            food_type varchar,
-            address varchar, 
-            website varchar)
-        `).then(() => {
-            console.log('Datebase seeded')
-            res.sendStatus(200)
-        }).catch(err => console.log('error seeding Database', err))
-    },
+// const form = document.querySelector("form")
 
 
-}
-
-
-
-
-
+const baseURL = `http://localhost:4004/restaurants`
 
 //Random Restaurant generator, Pick 4 me button located at the top right corner
 
