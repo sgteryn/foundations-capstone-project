@@ -1,7 +1,15 @@
-require('dotenv').config()
+require("dotenv").config()
+const {CONNECTION_STRING} = process.env
 
-
-
+const Sequelize = require('sequelize')
+const sequelize = new Sequelize(CONNECTION_STRING, {
+    dialect: 'postgres',
+    dialectOptions: {
+        ssl: {
+            rejectUnauthorized: false
+        }
+    }
+  })
 
 module.exports = {
     seed: (req,res) => {
@@ -18,7 +26,7 @@ module.exports = {
             res.sendStatus(200)
         }).catch(err => console.log('error seeding Database', err))
     },
-    
+
 
 }
 
@@ -30,10 +38,10 @@ module.exports = {
 //Random Restaurant generator, Pick 4 me button located at the top right corner
 
 
-var restaurants = ["Ima","Maty's Cuisine","Detroit Vegan Soul", "Fusion Flare Kitchen & Cocktails", "The Jamaican Pot", "SavannahBlue","Dime Store","Central Kitchen + Bar","They Say","Bert's Marketplace", "Coop Detroit","Norma G's"]
+// var restaurants = ["Ima","Maty's Cuisine","Detroit Vegan Soul", "Fusion Flare Kitchen & Cocktails", "The Jamaican Pot", "SavannahBlue","Dime Store","Central Kitchen + Bar","They Say","Bert's Marketplace", "Coop Detroit","Norma G's"]
 
-randomRestaurant = Math.floor(Math.random()* restaurants.length);
-console.log(random, restaurants[random])
+// randomRestaurant = Math.floor(Math.random()* restaurants.length);
+// console.log(random, restaurants[random])
 
-let randomRestaurantButton = document.querySelector('#pick4mebutton')
-randomRestaurant.addEventListener("click", randomRestaurant);
+// let randomRestaurantButton = document.querySelector('#pick4mebutton')
+// randomRestaurant.addEventListener("click", randomRestaurant);
