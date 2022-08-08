@@ -1,6 +1,7 @@
 const express = require("express")
 const cors = require("cors")
 const app = express()
+const path = require('path')
 
 const {seed, getRestaurants, addRestaurant, editRating, deleteRestaurant} = require('./controller.js')
 
@@ -27,6 +28,6 @@ app.put('/restaurants', editRating)
 app.delete('/restaurants/:id', deleteRestaurant)
 
 
-const {SERVER_PORT} = process.env
+const {SERVER_PORT} = process.env || 4004
 
 app.listen(SERVER_PORT, () => console.log(`Server running on port ${SERVER_PORT}`));
