@@ -10,6 +10,13 @@ app.use(express.json())
 app.use(cors())
 
 
+//connect to front-end
+app.get("/", (req, res) => {
+    res.sendFile(path.resolve("restaurants.html"));
+  });
+app.get('/js',(req,res)=>{res.sendFile(path.join(__dirname,'./restaurants.js'))})
+app.get('/stylesheet.css', (req,res)=>{res.sendFile(path.join(__dirname,'./stylesheet.css'))})
+
 //seed database 
 app.post('/seed', seed)
 
