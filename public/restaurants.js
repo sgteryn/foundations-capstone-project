@@ -46,6 +46,7 @@ function submitHandler(e) {
         website: website.value
     }
     
+    
     addRestaurant(bodyObj)
     
     rating.value = false
@@ -53,6 +54,7 @@ function submitHandler(e) {
     food_type.value =''
     address.value =''
     website.value =''
+    getRestaurants()
 }
 
 submitRestaurantButton.addEventListener('click', submitHandler)
@@ -62,22 +64,25 @@ function displayRestaurants(arr) {
     restaurantListContainer.innerHTML = ''
     arr.map(restaurant => {
         const restaurantListCard = document.createElement('section')
-        restaurantListCard.innerHTML =`<div class="card text-center mb-2" style="width: 30rem;">
+        restaurantListCard.innerHTML =`<div class="card text-center mb-2" style="width: 30rem; height: 20rem;">
         <div class="card-header bg-success p-2 text-primary bg-opacity-10" >
-        ${restaurant.name}
+        ${restaurant.name} 
         </div>
         <div class="card-body">
         <h5 class="card-title text-secondary">${restaurant.food_type}</h5>
         <p class="card-text text-secondary">${restaurant.address}</p>
+        <p class="card-text text-secondary">Rating: ${restaurant.rating}</p>
         <a href="${restaurant.website}" class="btn btn-primary">Checkout Website</a>
         </div>
         <div class="card-footer text-muted">
-        ${restaurant.rating}
+        <button onclick='deleteRestaurant(${restaurant.restaurant_id})' class="btn btn-primary">Delete</button>
+        <button class="btn btn-primary">Edit</button>
         </div>
         </div>`
         restaurantListContainer.appendChild(restaurantListCard)
     })
 }
+
 
 //Random Restaurant generator, Pick 4 me button located at the top right corner
 

@@ -58,13 +58,14 @@ module.exports = {
             website
             } = req.body
         sequelize.query(`INSERT INTO restaurants (rating, name, food_type, address, website) 
-        values (${rating},${name}, ${food_type}, ${address},${website})`)
+        values ('${rating}','${name}', '${food_type}', '${address}','${website}')
+        `)
         .then(dbRes => res.status(200).send(dbRes[0]))
         .catch(err => console.log(err))
     },
     editRating: (req, res) => {
         let {rating} = req.body
-        sequelize.query(`UPDATE restaurants(rating) VALUES(${rating})`)
+        sequelize.query(`UPDATE restaurants(rating) VALUES ('${rating}')`)
         .then(dbRes => res.status(200).send(dbRes[0]))
         .catch(err => console.log(err))
      },
@@ -72,7 +73,9 @@ module.exports = {
     deleteRestaurant:  (req,res) => {
         let {id} = req.params
         sequelize.query(`DELETE from restaurants
-        where restaurant_id = ${req.params.id}`)
+        where restaurant_id = '${req.params.id}'; 
+        SELECT * FROM restaurants
+        `)
         .then(dbRes => res.status(200).send(dbRes[0]))
         .catch(err => console.log(err))
     }   

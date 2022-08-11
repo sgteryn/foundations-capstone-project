@@ -22,6 +22,12 @@ color: rgb(219, 217, 217);
 	margin-top: 2rem;
 	text-align: center;
 }
+
+.landingheader{
+	margin: 2rem;
+	margin-top: 2rem;
+	text-align: center;
+}
 .logo{
 	cursor: pointer;
 }
@@ -125,9 +131,8 @@ nav {
 	
 }
 
-#DGoodsLogo {
+#dGoodsLogo {
 	height: 20%;
-	width: fit-content; 
 	position: center;
 }
 
