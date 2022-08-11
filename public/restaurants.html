@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="author" content ="Teryn">
+        <meta name='keyword' content="HTML, CSS, Javascript">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Michroma">
+        <style>
+            body {
+                font-family: "Michroma", sans-serif;
+                    }
+        </style>
+        <link rel="stylesheet" href="stylesheet.css">
+    </head>
+    <body class="body" id="restbody" >
+        <header>
+            <nav>
+                <img src="/dgoodsmonogramlogo.png" href="./home.html" class="logo" id="miniLogo" width="100" height="48">
+                <!-- Button trigger modal -->
+<button type="button" class="btn btn-primary randomrest" data-bs-toggle="modal" data-bs-target="#staticBackdrop" id="randomRestaurantButton">
+    Pick4Me!
+  </button>
+  
+  <!-- Modal -->
+  <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="staticBackdropLabel">Here's Where You're Going:</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+         
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          <a type="button" class="btn btn-primary" href="#" id="website-link">Go to Website</a>
+        </div>
+      </div>
+    </div>
+  </div>
+                <!-- <button data-modal-target="#pickmePopOut" id="randomRestaurantButton">Pick4Me!</button>
+                <div class="pickmePopOut" id="pickmePopOut">
+                <h1 class="pickmeTitle">Here's Where You're Going:</h1>
+                    <button data-close-button class="closebutton">&times;</button>
+                </div> 
+                    <p class="pickedRestaurant" id="pickedRestaurant"></p>
+            </div>
+            <div id="overlay"></div> -->
+            <div class="menu">
+                <ul class="navbar-nav me-auto mb-2 mb-md">
+                   <li class="navli"> <a class="nav-link text-secondary" href="./restaurants.html">Restaurants Directory</a></li>
+                   <li class="navli"><a class="nav-link text-secondary" href="./login.html">Login/Create User</a>
+                   </li>    
+                </ul>
+            </div>
+            </nav>
+                <img src="/dgoodslogo.png" alt="DGoods" class="center">  
+        </header>
+        <main>
+            <h1 id="title">Restaurants</h1>
+            <section id="restaurant-list-container" class="d-flex flex-row flex-wrap justify-content-around"> </section>
+             <div></div>
+             
+             <form>
+                 <h3>Don't see your favorite Detroit Restaurant? Add it here: </h3>
+                 <input 
+                 type="text"
+                 id="name"
+                 placeholder="Restaurant Name"
+                 />
+                 <input 
+                 type="text"
+                 id="foodType"
+                 placeholder="Type of food"
+                 />
+                 <input 
+                 type="text"
+                 id="location"
+                 placeholder="Address"
+                 />
+                 <input 
+                 type="text"
+                 id="website"
+                 placeholder="website url"
+                 />
+                 <section id="ratings container">
+                    <p>Rate the Restaurant between 0 and 5</p>
+                     <label for="zero">
+                         <input
+                         type="radio"
+                         name="ratings"
+                         value="0"
+                         id="zero"/>
+                         0
+                        </label>
+                        <label for="one">
+                            <input
+                            type="radio"
+                            name="ratings"
+                            value="1"
+                            id="one"/>
+                            1
+                        </label>
+                        <label for="two">
+                            <input
+                            type="radio"
+                            name="ratings"
+                            value="2"
+                            id="two"/>
+                            2
+                        </label>
+                        <label for="three">
+                            <input
+                            type="radio"
+                            name="ratings"
+                            value="3"
+                            id="three"/>
+                            3
+                        </label>
+                        <label for="four">
+                            <input
+                            type="radio"
+                            name="ratings"
+                            value="4"
+                            id="four"/>
+                            4
+                        </label>
+                        <label for="five">
+                            <input
+                            type="radio"
+                            name="ratings"
+                            value="5"
+                            id="five"/>
+                            5
+                        </label>
+                    </section>
+                    <button id="submitRestButton">Submit Restaurant</button>
+                </form>
+        </main>
+
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+        <script src="./restaurants.js"></script>
+       <footer>
+        <address class="email">
+             <a href="mailto:contact.dgoods@gmail.com">CONTACT D GOODS</a> <br>
+             D GOODS Site Created 2022
+        </address>
+ 
+       </footer>  
+    </body>
+   
+</html>

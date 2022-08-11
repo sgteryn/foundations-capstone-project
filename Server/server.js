@@ -4,19 +4,24 @@ const app = express()
 const path = require('path')
 
 const {seed, getRestaurants, addRestaurant, editRating, deleteRestaurant} = require('./controller.js')
+const exp = require("constants")
 
 require("dotenv").config()
 
 app.use(express.json())
 app.use(cors())
+app.use(express.static('public'))
 
-
-//connect to front-end
+//connect to front-end landing page
 app.get("/", (req, res) => {
-    res.sendFile(path.resolve("restaurants.html"));
-  });
-app.get('/js',(req,res)=>{res.sendFile(path.join(__dirname,'./restaurants.js'))})
-app.get('/stylesheet.css', (req,res)=>{res.sendFile(path.join(__dirname,'./stylesheet.css'))})
+  res.sendFile(path.join(__dirname,"../public/landing.html"));
+});
+
+//connect to front end home page
+app.get("/", (req, res) => {
+  res.sendFile(path.join(__dirname,"../public/home.html"));
+});
+
 
 //seed database 
 app.post('/seed', seed)
@@ -24,7 +29,7 @@ app.post('/seed', seed)
 //restaurants 
 app.get('/restaurants', getRestaurants)
 app.post('/restaurants', addRestaurant)
-app.put('/restaurants', editRating)
+app.put('/restaurants/:id', editRating)
 app.delete('/restaurants/:id', deleteRestaurant)
 
 
