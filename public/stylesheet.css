@@ -142,6 +142,7 @@ justify-content: space-between;
 
 #dGoodsLogo {
 	height: 20%;
+	margin-top: 15%;
 	position: center;
 }
 
@@ -185,11 +186,20 @@ image-orientation:inherit;
 }
 
 #featuredRest{
-	position: absolute;
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+	height: 10%;
+	width: 100%;
+	
 }
 
 .featured {
   font-weight: bolder; 
   font-size:16px;
 	
+}
+
+#aboutdtext{
+	text-align: justify;
 }
