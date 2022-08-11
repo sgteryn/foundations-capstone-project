@@ -21,7 +21,7 @@ const errCallback = err => console.log(err)
 const getRestaurants = () => axios.get(baseURL).then(restaurantsCallback).catch(errCallback)
 const addRestaurant = body => axios.post(baseURL, body).then(restaurantsCallback).catch(errCallback)
 const deleteRestaurant = id => axios.delete(`${baseURL}/${id}`).then(restaurantsCallback).catch(errCallback)
-const editRating = (id) => axios.put(`${baseURL}/${id}`, {type}).then(restaurantsCallback).catch(errCallback)
+const editRating = (id) => axios.put(`${baseURL}/${id}`).then(restaurantsCallback).catch(errCallback)
 
 
 
@@ -76,7 +76,7 @@ function displayRestaurants(arr) {
         </div>
         <div class="card-footer text-muted">
         <button onclick='deleteRestaurant(${restaurant.restaurant_id})' class="btn btn-primary">Delete</button>
-        <button class="btn btn-primary">Edit</button>
+        <button onclick='editRestaurant(${restaurant.restaurant_id})' class="btn btn-primary">Edit</button>
         </div>
         </div>`
         restaurantListContainer.appendChild(restaurantListCard)
